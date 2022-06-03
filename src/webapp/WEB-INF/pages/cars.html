@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars list</title>
+</head>
+<body>
+<h1>Cars list</h1>
+<p>Count of cars =
+    <span th:text=" ${cars.size()}">Cars</span>
+</p>
+<!--ну тут я просто скопипастила табличку и подставила свое...-->
+<table>
+    <tr>
+        <th>Colour</th>
+        <th>Mark</th>
+        <th>Serial number</th>
+        <th>Comment</th>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td th:text=" ${car.colour}"></td>
+        <td th:text=" ${car.mark}"></td>
+        <td th:text=" ${car.serialNumber}"></td>
+        <td th:text=" ${car.comment}"></td>
+    </tr>
+</table>
+</body>
+</html>
